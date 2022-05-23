@@ -1,9 +1,9 @@
 {
-    "name": "blancamir/phpcomposer",
+    "name": "tecnoapi/Intercambiador-API-Integrate-PHP",
     "authors": [
         {
-            "name": "Blanca Mir",
-            "email": "bmir@tridenia.com"
+            "name": "Tecnoapi",
+            "email": "rcampillo@api.cat"
         }
     ],
     "require": {
