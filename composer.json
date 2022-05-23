@@ -1,12 +1,12 @@
 {
     "name": "tecnoapi/intercambiador-api-integrate-php",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Tecnoapi",
             "email": "rcampillo@api.cat"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.3",
         "vlucas/phpdotenv": "^5.4"
