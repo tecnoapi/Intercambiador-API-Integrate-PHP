@@ -7,7 +7,7 @@
         }
     ],
     "version": "0.0.1",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
         "vlucas/phpdotenv": "^5.4"
