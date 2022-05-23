@@ -5,11 +5,17 @@ class ApiIntercambiador
 {
     private $token;
     private $sandbox;
+    private $url;
 
     public function __construct($token, $sandbox=null)
     {
         $this->token = $token;
         $this->sandbox = $sandbox;
+        if($sandbox){
+            $this->url = $_ENV["APP_URL_SANDBOX"];
+        } else {
+            $this->url = $_ENV["APP_URL_PRO"];
+        }
     }
 
     // $api = new ApiIntercambiador($token) => REAL
@@ -36,7 +42,7 @@ class ApiIntercambiador
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => $_ENV["APP_URL"].'/api-intercambiador',
+          CURLOPT_URL => $this->url.'/api-intercambiador',
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => '',
           CURLOPT_MAXREDIRS => 10,
@@ -63,7 +69,7 @@ class ApiIntercambiador
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $_ENV["APP_URL"].'/properties',
+        CURLOPT_URL => $this->url.'/properties',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -90,7 +96,7 @@ class ApiIntercambiador
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $_ENV["APP_URL"].'/properties/'.$array_data['id'],
+        CURLOPT_URL => $this->url.'/properties/'.$array_data['id'],
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
