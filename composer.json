@@ -15,5 +15,8 @@
         "psr-4": {
             "ApiIntercambiador\\": "src/"
         }
-    }
+    },
+    "license": [
+        "OSL-3.0"
+    ]
 }
