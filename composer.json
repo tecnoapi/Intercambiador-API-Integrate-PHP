@@ -1,5 +1,6 @@
 {
     "name": "tecnoapi/intercambiador-api-integrate-php",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Tecnoapi",
