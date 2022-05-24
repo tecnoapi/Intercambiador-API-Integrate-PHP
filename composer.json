@@ -6,11 +6,10 @@
             "email": "rcampillo@api.cat"
         }
     ],
-    "version": "0.0.3",
+    "version": "0.0.4",
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.3.3",
-        "vlucas/phpdotenv": "^5.4"
+        "php": ">=5.3.3"
       },
     "autoload": {
         "psr-4": {

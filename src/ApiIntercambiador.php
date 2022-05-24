@@ -6,15 +6,17 @@ class ApiIntercambiador
     private $token;
     private $sandbox;
     private $url;
+    const APP_URL_SANDBOX= "http://localhost:3000";
+    const APP_URL_PRO= "http://localhost:3000";
 
     public function __construct($token, $sandbox=null)
     {
         $this->token = $token;
         $this->sandbox = $sandbox;
         if($sandbox){
-            $this->url = $_ENV["APP_URL_SANDBOX"];
+            $this->url = $this->APP_URL_SANDBOX;
         } else {
-            $this->url = $_ENV["APP_URL_PRO"];
+            $this->url = $this->APP_URL_PRO;
         }
     }
 
