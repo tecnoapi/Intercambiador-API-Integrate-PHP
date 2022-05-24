@@ -5,4 +5,4 @@ require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-echo $_ENV["APP_URL"];
+echo $_ENV["APP_URL_PRO"];
