@@ -6,38 +6,20 @@ class ApiIntercambiador
     private $token;
     private $sandbox;
     private $url;
-    private $APP_URL_SANDBOX = "http://localhost:3000";
-    private $APP_URL_PRO = "http://localhost:3000";
+    const APP_URL_SANDBOX = "https://sandbox.apiplataforma.online";
+    const APP_URL_PRO = "https://intercam.apiplataforma.online";
 
     public function __construct($token, $sandbox=null)
     {
         $this->token = $token;
         $this->sandbox = $sandbox;
         if($sandbox){
-            $this->url = $this->APP_URL_SANDBOX;
+            $this->url = self::APP_URL_SANDBOX;
         } else {
-            $this->url = $this->APP_URL_PRO;
+            $this->url = self::APP_URL_PRO;
         }
     }
 
-    // $api = new ApiIntercambiador($token) => REAL
-
-    // $api = new ApiIntercambiador($token, 'sandbox') //=> SANDBOX
-
-    // $result = $api->getProperties(); => GET /api-intercambiador 
-
-    // $result = $api->addProperty($array_data); => POST /properties
-
-    // $result = $api->updateProperty($array_data); => PUT /properties
-
-    // $result = $api->removeProperty($array_id); => DELETE /properties
-
-    
-
-    // $array_data és un array de properties, pot ser que només vungui 1 property
-
-    // $array_id és un array d’IDs de properties, pot ser que només vingui 1 ID
-    
     public function getProperties()
     {
 
