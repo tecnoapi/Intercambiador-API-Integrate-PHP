@@ -8,7 +8,7 @@ composer install tecnoapi/intercambiador-api-integrate-php
 ## Usage
 ```
 use ApiIntercambiador\ApiIntercambiador;
-$api = new ApiIntercambiador($token, [mode ('sandbox' | '')]);
+$api = new ApiIntercambiador($token, $token_source, [mode ('sandbox' | '')]);
 ```
 
 # GET
