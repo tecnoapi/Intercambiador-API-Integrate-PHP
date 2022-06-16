@@ -4,14 +4,16 @@ namespace ApiIntercambiador;
 class ApiIntercambiador
 {
     private $token;
+    private $source_token;
     private $sandbox;
     private $url;
     const APP_URL_SANDBOX = "https://sandbox.apiplataforma.online";
     const APP_URL_PRO = "https://intercam.apiplataforma.online";
 
-    public function __construct($token, $sandbox=null)
+    public function __construct($token, $source_token, $sandbox=null)
     {
         $this->token = $token;
+        $this->source_token = $source_token;
         $this->sandbox = $sandbox;
         if($sandbox){
             $this->url = self::APP_URL_SANDBOX;
@@ -36,6 +38,7 @@ class ApiIntercambiador
           CURLOPT_CUSTOMREQUEST => 'GET',
           CURLOPT_HTTPHEADER => array(
             'x-access-token: ' . $this->token,
+            'source-token: ' . $this->source_token,
             'Content-Type: application/json'
           ),
         ));
@@ -53,7 +56,7 @@ class ApiIntercambiador
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->url.'/properties',
+        CURLOPT_URL => $this->url.'/api-intercambiador',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -64,6 +67,7 @@ class ApiIntercambiador
         CURLOPT_POSTFIELDS => $array_data,
         CURLOPT_HTTPHEADER => array(
             'x-access-token: ' . $this->token,
+            'source-token: ' . $this->source_token,
             'Content-Type: application/json'
         ),
         ));
@@ -80,7 +84,7 @@ class ApiIntercambiador
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->url.'/properties',
+        CURLOPT_URL => $this->url.'/api-intercambiador',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -91,6 +95,7 @@ class ApiIntercambiador
         CURLOPT_POSTFIELDS => $array_data,
         CURLOPT_HTTPHEADER => array(
             'x-access-token: ' . $this->token,
+            'source-token: ' . $this->source_token,
             'Content-Type: application/json'
         ),
         ));
@@ -106,7 +111,7 @@ class ApiIntercambiador
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->url.'/properties',
+        CURLOPT_URL => $this->url.'/api-intercambiador',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -117,6 +122,7 @@ class ApiIntercambiador
         CURLOPT_POSTFIELDS => $array_id,
         CURLOPT_HTTPHEADER => array(
             'x-access-token: ' . $this->token,
+            'source-token: ' . $this->source_token,
             'Content-Type: application/json'
         ),
         ));
