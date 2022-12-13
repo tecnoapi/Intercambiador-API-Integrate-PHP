@@ -8,7 +8,7 @@ class ApiIntercambiador
     private $sandbox;
     private $url;
     const APP_URL_SANDBOX = "https://sandbox.apiplataforma.online";
-    const APP_URL_PRO = "https://intercam.apiplataforma.online";
+    const APP_URL_PRO = "https://apiplataforma.online";
 
     public function __construct($token, $source_token, $sandbox=null)
     {

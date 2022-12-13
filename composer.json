@@ -6,7 +6,7 @@
             "email": "rcampillo@api.cat"
         }
     ],
-    "version": "0.0.7",
+    "version": "0.0.8",
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3"
